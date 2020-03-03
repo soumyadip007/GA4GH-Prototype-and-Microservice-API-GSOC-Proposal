@@ -12,4 +12,8 @@ public interface GA4GHRepository extends JpaRepository<GA4GH, Integer> {
 	GA4GH findById(int id);
 	
 	GA4GH findBySequence_Name(String seq);
+	
+	GA4GH findByGenBank_Accn(String seq);
+	
+	GA4GH findByRefseq_Accn(String seq);
 }
