@@ -31,32 +31,32 @@ public class AdminRestController {
 	
 	
 
-	@GetMapping("/")
+	@GetMapping("/all")
 	public List<GA4GH> FindAll() {
 	
 		return GA4GHService.findAll();
 	}
 	
 	
-	@GetMapping("/id/{id}")
+	@GetMapping("/id/{theId}")
 	public GA4GH findById(@PathVariable int theId) {
 		
 		return GA4GHService.findById(theId);
 	}
 	
-	@GetMapping("/sequence/{id}")
+	@GetMapping("/sequence/{theId}")
 	public List<GA4GH> findBySequence_Name(@PathVariable String theId) {
 		
 		return GA4GHService.findBySequence_Name(theId);
 	}
 
-	@GetMapping("/id/genbank/{id}")
+	@GetMapping("/id/genbank/{theId}")
 	public List<GA4GH> findByGenBank_Accn(@PathVariable String theId) {
 		
 		return GA4GHService.findByGenBank_Accn(theId);
 	}
 
-	@GetMapping("/id/refseq/{id}")
+	@GetMapping("/id/refseq/{theId}")
 	public List<GA4GH> findByRefseq_Accn(@PathVariable String theId) {
 		
 		return GA4GHService.findByRefseq_Accn(theId);
@@ -82,7 +82,7 @@ public class AdminRestController {
 		return obj;
 	}
 	
-	@GetMapping("/delete/{id}")
+	@GetMapping("/delete/{theId}")
 	public String delete(@PathVariable int theId) {
 		
 		 GA4GHService.deleteById(theId);
