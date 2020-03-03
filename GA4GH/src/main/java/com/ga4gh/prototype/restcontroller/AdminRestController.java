@@ -50,13 +50,13 @@ public class AdminRestController {
 		return GA4GHService.findBySequence_Name(theId);
 	}
 
-	@GetMapping("/id/genbank/{theId}")
+	@GetMapping("/genbank/{theId}")
 	public List<GA4GH> findByGenBank_Accn(@PathVariable String theId) {
 		
 		return GA4GHService.findByGenBank_Accn(theId);
 	}
 
-	@GetMapping("/id/refseq/{theId}")
+	@GetMapping("/refseq/{theId}")
 	public List<GA4GH> findByRefseq_Accn(@PathVariable String theId) {
 		
 		return GA4GHService.findByRefseq_Accn(theId);
