@@ -81,4 +81,13 @@ public class AdminRestController {
 		
 		return obj;
 	}
+	
+	@GetMapping("/delete/{id}")
+	public String delete(@PathVariable int theId) {
+		
+		 GA4GHService.deleteById(theId);
+		 
+		 return "value deleted";
+	}
+	
 }
