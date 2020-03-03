@@ -16,7 +16,7 @@ import com.ga4gh.prototype.service.GA4GHService;
 
 @CrossOrigin(origins ="*",allowedHeaders="*",maxAge=200000) 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/user")
 public class UserRestController {
 
 	
@@ -69,30 +69,4 @@ public class UserRestController {
 	}
 	
 
-	@PostMapping("/add")
-	public GA4GH add(@RequestBody GA4GH obj) {
-		
-		obj.setId(0);
-		
-		GA4GHService.save(obj);
-		
-		return obj;
-	}
-	
-	@PostMapping("/update")
-	public GA4GH update(@RequestBody GA4GH obj) {
-		
-		GA4GHService.save(obj);
-		
-		return obj;
-	}
-	
-	@GetMapping("/delete/{theId}")
-	public String delete(@PathVariable int theId) {
-		
-		 GA4GHService.deleteById(theId);
-		 
-		 return "value deleted";
-	}
-	
 }
