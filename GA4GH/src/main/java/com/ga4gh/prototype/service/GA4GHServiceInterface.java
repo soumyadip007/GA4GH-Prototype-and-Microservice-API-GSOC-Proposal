@@ -13,5 +13,10 @@ public interface GA4GHServiceInterface {
 	public void deleteById(int theId);
 	
 	public GA4GH findById(int theId);
+
+	public List<GA4GH> findBySequence_Name(String seq);
 	
+	public List<GA4GH> findByGenBank_Accn(String seq);
+	
+	public List<GA4GH> findByRefseq_Accn(String seq);
 }
