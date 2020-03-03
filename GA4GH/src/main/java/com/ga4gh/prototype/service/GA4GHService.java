@@ -44,19 +44,19 @@ public class GA4GHService implements GA4GHServiceInterface {
 
 	public List<GA4GH> findBySequence_Name(String seq) {
 		
-		return GA4GHRepository.findBySequenceName(seq);
+		return GA4GHRepository.findBySequencename(seq);
 	}
 
 
 	public List<GA4GH> findByGenBank_Accn(String seq) {
 		
-		return GA4GHRepository.findByGenBankAccn(seq);
+		return GA4GHRepository.findByGenbankaccn(seq);
 	}
 
 
 	public List<GA4GH> findByRefseq_Accn(String seq) {
 		
-		return GA4GHRepository.findByRefseqAccn(seq);
+		return GA4GHRepository.findByRefseqaccn(seq);
 	}
 
 }
