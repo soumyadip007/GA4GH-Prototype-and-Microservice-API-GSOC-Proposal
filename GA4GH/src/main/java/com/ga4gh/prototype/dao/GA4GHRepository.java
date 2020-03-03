@@ -14,7 +14,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "ga4gh")
-public class GA4GH_DAO {
+public class GA4GHRepository {
 
 	
 
