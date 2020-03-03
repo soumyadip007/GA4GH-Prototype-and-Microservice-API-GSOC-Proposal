@@ -1,4 +1,4 @@
-package com.ga4gh.prototype.GA4GH;
+package com.ga4gh.prototype;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
