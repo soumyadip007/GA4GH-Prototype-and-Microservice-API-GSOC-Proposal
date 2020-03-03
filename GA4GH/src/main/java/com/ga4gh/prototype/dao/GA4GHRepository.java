@@ -10,4 +10,6 @@ import com.ga4gh.prototype.entity.GA4GH;
 public interface GA4GHRepository extends JpaRepository<GA4GH, Integer> {
 
 	GA4GH findById(int id);
+	
+	GA4GH findBySequence_Name(String seq);
 }
