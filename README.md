@@ -1,1 +1,1 @@
-# -GA4GH-Demo-API
+# GA4GH-Prototype-and-Demo-API
