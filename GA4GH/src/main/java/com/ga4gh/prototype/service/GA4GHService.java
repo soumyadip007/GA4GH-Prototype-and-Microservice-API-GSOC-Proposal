@@ -55,8 +55,8 @@ public class GA4GHService implements GA4GHServiceInterface {
 
 
 	public List<GA4GH> findByRefseq_Accn(String seq) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return GA4GHRepository.findByRefseq_Accn(seq);
 	}
 
 }
