@@ -24,4 +24,11 @@ public class GA4GH_DAO {
 	int id;
 	
 	
+	String Sequence_Name;
+	
+	String GenBank_Accn;
+	
+	String Refseq_Accn;
+
+	
 }
