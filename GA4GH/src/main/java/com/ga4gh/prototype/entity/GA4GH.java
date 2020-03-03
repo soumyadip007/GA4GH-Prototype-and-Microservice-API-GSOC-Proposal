@@ -17,6 +17,8 @@ import lombok.Setter;
 @Table(name = "ga4gh")
 public class GA4GH {
 
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
@@ -34,5 +36,16 @@ public class GA4GH {
 	
 
 	@Column(name = "sequencelength")
-	String sequencelength;	
+	String sequencelength;
+
+
+	public GA4GH(String sequencename, String genbankaccn, String refseqaccn, String sequencelength) {
+		super();
+		this.sequencename = sequencename;
+		this.genbankaccn = genbankaccn;
+		this.refseqaccn = refseqaccn;
+		this.sequencelength = sequencelength;
+	}	
+	
+	
 }
