@@ -24,11 +24,11 @@ public class GA4GH {
 
 
 	@Column(name = "Sequence_Name")
-	String SequenceName;	
+	String sequencename;	
 	
 	@Column(name = "GenBank_Accn")
-	String GenBankAccn;	
+	String genbankaccn;	
 	
 	@Column(name = "Refseq_Accn")
-	String RefseqAccn;		
+	String refseqaccn;		
 }
