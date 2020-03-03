@@ -23,7 +23,7 @@ public class GA4GHService implements GA4GHServiceInterface {
 	
 	
 	public List<GA4GH> findAll() {
-		return null;
+		return GA4GHRepository.findAll();
 	}
 
 	public void save(GA4GH OBJ) {
