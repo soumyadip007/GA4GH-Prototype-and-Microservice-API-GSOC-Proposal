@@ -19,4 +19,6 @@ public interface GA4GHServiceInterface {
 	public List<GA4GH> findByGenBank_Accn(String seq);
 	
 	public List<GA4GH> findByRefseq_Accn(String seq);
+	
+	public List<GA4GH> findBySequencelength(String seq);
 }
