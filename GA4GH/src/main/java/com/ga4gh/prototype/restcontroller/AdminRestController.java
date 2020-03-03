@@ -1,8 +1,10 @@
 package com.ga4gh.prototype.restcontroller;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +30,7 @@ public class AdminRestController {
 	{
 		this.GA4GHService=GA4GHService;
 	}
-	
+
 	
 
 	@GetMapping("")
@@ -94,5 +96,13 @@ public class AdminRestController {
 		 
 		 return "value deleted";
 	}
+
+	public ResponseEntity<GA4GH> getForEntity(URI uri, Class<String> class1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
 	
 }
