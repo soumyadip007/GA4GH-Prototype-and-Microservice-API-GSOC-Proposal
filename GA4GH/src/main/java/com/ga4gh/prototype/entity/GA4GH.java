@@ -39,13 +39,4 @@ public class GA4GH {
 	String sequencelength;
 
 
-	public GA4GH(String sequencename, String genbankaccn, String refseqaccn, String sequencelength) {
-		super();
-		this.sequencename = sequencename;
-		this.genbankaccn = genbankaccn;
-		this.refseqaccn = refseqaccn;
-		this.sequencelength = sequencelength;
-	}	
-	
-	
 }
