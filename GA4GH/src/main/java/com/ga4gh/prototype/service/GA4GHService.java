@@ -28,6 +28,7 @@ public class GA4GHService implements GA4GHServiceInterface {
 
 	public void save(GA4GH OBJ) {
 		
+		GA4GHRepository.save(OBJ);
 	}
 
 	public void deleteById(int theId) {
