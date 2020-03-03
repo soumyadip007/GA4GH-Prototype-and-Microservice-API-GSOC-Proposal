@@ -41,4 +41,22 @@ public class AdminRestController {
 		
 		return GA4GHService.findById(theId);
 	}
+	
+
+	public List<GA4GH> findBySequence_Name(String seq) {
+		
+		return GA4GHService.findBySequence_Name(seq);
+	}
+
+
+	public List<GA4GH> findByGenBank_Accn(String seq) {
+		
+		return GA4GHService.findByGenBank_Accn(seq);
+	}
+
+
+	public List<GA4GH> findByRefseq_Accn(String seq) {
+		
+		return GA4GHService.findByRefseq_Accn(seq);
+	}
 }
