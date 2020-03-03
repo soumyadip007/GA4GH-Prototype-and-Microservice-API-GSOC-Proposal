@@ -58,5 +58,10 @@ public class GA4GHService implements GA4GHServiceInterface {
 		
 		return GA4GHRepository.findByRefseqaccn(seq);
 	}
+	
+	public List<GA4GH> findBySequencelength(String seq)
+	{
+		return GA4GHRepository.findBySequencelength(seq);
+	}
 
 }
