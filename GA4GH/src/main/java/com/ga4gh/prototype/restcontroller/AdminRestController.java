@@ -44,7 +44,7 @@ public class AdminRestController {
 		return GA4GHService.findById(theId);
 	}
 	
-	@GetMapping("/sequence/{theId}")
+	@GetMapping("/sequencename/{theId}")
 	public List<GA4GH> findBySequence_Name(@PathVariable String theId) {
 		
 		return GA4GHService.findBySequence_Name(theId);
