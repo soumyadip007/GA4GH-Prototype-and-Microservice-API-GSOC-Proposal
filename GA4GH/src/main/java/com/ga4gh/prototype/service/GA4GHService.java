@@ -43,8 +43,8 @@ public class GA4GHService implements GA4GHServiceInterface {
 
 
 	public List<GA4GH> findBySequence_Name(String seq) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return GA4GHRepository.findBySequence_Name(seq);
 	}
 
 
