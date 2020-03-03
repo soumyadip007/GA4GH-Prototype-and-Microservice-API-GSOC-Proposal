@@ -33,10 +33,29 @@ public class GA4GHService implements GA4GHServiceInterface {
 
 	public void deleteById(int theId) {
 		
+		GA4GHRepository.deleteById(theId);
 	}
 
 	public GA4GH findById(int theId) {
 		
+		return GA4GHRepository.findById(theId);
+	}
+
+
+	public List<GA4GH> findBySequence_Name(String seq) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public List<GA4GH> findByGenBank_Accn(String seq) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public List<GA4GH> findByRefseq_Accn(String seq) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
