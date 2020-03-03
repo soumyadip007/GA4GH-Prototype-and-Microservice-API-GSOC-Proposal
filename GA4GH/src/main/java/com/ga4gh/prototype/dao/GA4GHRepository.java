@@ -18,4 +18,6 @@ public interface GA4GHRepository extends JpaRepository<GA4GH, Integer> {
 	public List<GA4GH> findByGenbankaccn(String seq);
 	
 	public List<GA4GH> findByRefseqaccn(String seq);
+	
+	public List<GA4GH> findBySequencelength(String seq);
 }
