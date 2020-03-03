@@ -41,22 +41,22 @@ public class GA4GHService implements GA4GHServiceInterface {
 		return GA4GHRepository.findById(theId);
 	}
 
-
-	public List<GA4GH> findBySequence_Name(String seq) {
-		
-		return GA4GHRepository.findBySequence_Name(seq);
-	}
-
-
-	public List<GA4GH> findByGenBank_Accn(String seq) {
-		
-		return GA4GHRepository.findByGenBank_Accn(seq);
-	}
-
-
-	public List<GA4GH> findByRefseq_Accn(String seq) {
-		
-		return GA4GHRepository.findByRefseq_Accn(seq);
-	}
+//
+//	public List<GA4GH> findBySequence_Name(String seq) {
+//		
+//		return GA4GHRepository.findBySequence_Name(seq);
+//	}
+//
+//
+//	public List<GA4GH> findByGenBank_Accn(String seq) {
+//		
+//		return GA4GHRepository.findByGenBank_Accn(seq);
+//	}
+//
+//
+//	public List<GA4GH> findByRefseq_Accn(String seq) {
+//		
+//		return GA4GHRepository.findByRefseq_Accn(seq);
+//	}
 
 }
