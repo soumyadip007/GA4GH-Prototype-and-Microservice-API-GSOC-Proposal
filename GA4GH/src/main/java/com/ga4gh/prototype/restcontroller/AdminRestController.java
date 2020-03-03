@@ -97,12 +97,7 @@ public class AdminRestController {
 		 return "value deleted";
 	}
 
-	public ResponseEntity<GA4GH> getForEntity(URI uri, Class<String> class1) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
+	
 
 	
 }
