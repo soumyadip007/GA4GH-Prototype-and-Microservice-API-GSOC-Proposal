@@ -16,6 +16,7 @@ import com.ga4gh.prototype.service.GA4GHService;
 
 @CrossOrigin(origins ="*",allowedHeaders="*",maxAge=200000) 
 @RestController
+@RequestMapping("/user")
 public class UserRestController {
 
 	
@@ -30,38 +31,38 @@ public class UserRestController {
 	
 	
 
-	@GetMapping("/user")
+	@GetMapping("")
 	public List<GA4GH> FindAll() {
 	
 		return GA4GHService.findAll();
 	}
 	
 	
-	@GetMapping("/user/id/{theId}")
+	@GetMapping("/id/{theId}")
 	public GA4GH findById(@PathVariable int theId) {
 		
 		return GA4GHService.findById(theId);
 	}
 	
-	@GetMapping("/user/sequencename/{theId}")
+	@GetMapping("/sequencename/{theId}")
 	public List<GA4GH> findBySequence_Name(@PathVariable String theId) {
 		
 		return GA4GHService.findBySequence_Name(theId);
 	}
 
-	@GetMapping("/user/genbank/{theId}")
+	@GetMapping("/genbank/{theId}")
 	public List<GA4GH> findByGenBank_Accn(@PathVariable String theId) {
 		
 		return GA4GHService.findByGenBank_Accn(theId);
 	}
 
-	@GetMapping("/user/refseq/{theId}")
+	@GetMapping("/refseq/{theId}")
 	public List<GA4GH> findByRefseq_Accn(@PathVariable String theId) {
 		
 		return GA4GHService.findByRefseq_Accn(theId);
 	}
 	
-	@GetMapping("/user/sequencelength/{theId}")
+	@GetMapping("/sequencelength/{theId}")
 	public List<GA4GH> findBySequencelength(@PathVariable String theId) {
 		
 		return GA4GHService.findBySequencelength(theId);
