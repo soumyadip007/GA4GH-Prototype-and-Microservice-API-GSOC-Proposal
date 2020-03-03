@@ -23,11 +23,13 @@ public class GA4GH_DAO {
 	@Column(name = "id")
 	int id;
 	
-	
+	@Column(name = "Sequence_Name")
 	String Sequence_Name;
 	
+	@Column(name = "GenBank_Accn")
 	String GenBank_Accn;
 	
+	@Column(name = "Refseq_Accn")
 	String Refseq_Accn;
 
 	
