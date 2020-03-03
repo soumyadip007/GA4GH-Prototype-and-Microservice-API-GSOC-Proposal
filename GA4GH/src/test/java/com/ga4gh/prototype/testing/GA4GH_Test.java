@@ -19,45 +19,45 @@ import com.ga4gh.prototype.restcontroller.AdminRestController;
 
 import junit.framework.Assert;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
 public class GA4GH_Test {
-
-    private static final String SEQNAME = "Chr1";
-    
-    private static final String GENBANK = "GK000001.2";
-    
-    private static final String REFSEQ = "AC_000158.1";
-    
-    private static final String SEQUENCE_LENGTH = "15833706";
-    
-    @LocalServerPort
-    int randomServerPort;
-     
-    @SuppressWarnings("deprecation")
-	@Test
-    public void testAll() throws URISyntaxException 
-    {
-
-        RestTemplate restTemplate = new RestTemplate();
-         
-        final String baseUrl = "http://localhost:8080/admin/add";
-        URI uri = new URI(baseUrl);
-     
-        GA4GH g = new GA4GH("000", "000", "000", "000");
-        
-        HttpHeaders headers = new HttpHeaders();
-     
-        HttpEntity request = new HttpEntity(g, headers);
-         
-        try
-        {
-            restTemplate.postForEntity(uri, request, String.class);
-           
-        }
-        catch(HttpClientErrorException ex) 
-        {
-        	
-         }
-    }
+//
+//    private static final String SEQNAME = "Chr1";
+//    
+//    private static final String GENBANK = "GK000001.2";
+//    
+//    private static final String REFSEQ = "AC_000158.1";
+//    
+//    private static final String SEQUENCE_LENGTH = "15833706";
+//    
+//    @LocalServerPort
+//    int randomServerPort;
+//     
+//    @SuppressWarnings("deprecation")
+//	@Test
+//    public void testAll() throws URISyntaxException 
+//    {
+//
+//        RestTemplate restTemplate = new RestTemplate();
+//         
+//        final String baseUrl = "http://localhost:8080/admin/add";
+//        URI uri = new URI(baseUrl);
+//     
+//        GA4GH g = new GA4GH("000", "000", "000", "000");
+//        
+//        HttpHeaders headers = new HttpHeaders();
+//     
+//        HttpEntity request = new HttpEntity(g, headers);
+//         
+//        try
+//        {
+//            restTemplate.postForEntity(uri, request, String.class);
+//           
+//        }
+//        catch(HttpClientErrorException ex) 
+//        {
+//        	
+//         }
+//    }
 }
