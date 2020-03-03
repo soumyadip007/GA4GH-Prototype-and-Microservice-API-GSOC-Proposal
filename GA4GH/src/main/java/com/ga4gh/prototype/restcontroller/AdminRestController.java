@@ -62,6 +62,11 @@ public class AdminRestController {
 		return GA4GHService.findByRefseq_Accn(theId);
 	}
 	
+	@GetMapping("/sequencelength/{theId}")
+	public List<GA4GH> findBySequencelength(@PathVariable String theId) {
+		
+		return GA4GHService.findBySequencelength(theId);
+	}
 	
 
 	@PostMapping("/add")
