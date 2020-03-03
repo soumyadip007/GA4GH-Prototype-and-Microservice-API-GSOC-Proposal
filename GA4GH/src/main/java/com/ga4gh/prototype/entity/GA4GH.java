@@ -31,4 +31,8 @@ public class GA4GH {
 	
 	@Column(name = "refseqaccn")
 	String refseqaccn;		
+	
+
+	@Column(name = "sequencelength")
+	String sequencelength;	
 }
