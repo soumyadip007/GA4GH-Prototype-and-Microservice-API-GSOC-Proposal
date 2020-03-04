@@ -71,7 +71,7 @@ public class AdminRestController {
 	}
 	
 
-	@PostMapping("/add")
+	@PostMapping("/save")
 	public GA4GH add(@RequestBody GA4GH obj) {
 		
 		obj.setId(0);
