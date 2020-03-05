@@ -1,1 +1,1 @@
-# Prototype-and-Demo-API
+# GA4GH-Prototype-and-Demo-API
