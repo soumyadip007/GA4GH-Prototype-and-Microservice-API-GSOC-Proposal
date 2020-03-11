@@ -1,4 +1,4 @@
-package com.ga4gh.prototype.dao;
+package com.ga4gh.prototype.repository;
 
 import java.util.List;
 

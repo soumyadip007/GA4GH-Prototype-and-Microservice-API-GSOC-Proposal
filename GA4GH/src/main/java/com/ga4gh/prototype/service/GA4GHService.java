@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ga4gh.prototype.dao.GA4GHRepository;
 import com.ga4gh.prototype.entity.GA4GH;
+import com.ga4gh.prototype.repository.GA4GHRepository;
 
 @Service
 public class GA4GHService implements GA4GHServiceInterface {

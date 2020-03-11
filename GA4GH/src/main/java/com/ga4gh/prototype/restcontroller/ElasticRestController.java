@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ga4gh.prototype.dao.ERepository;
 import com.ga4gh.prototype.entity.GA4GH;
+import com.ga4gh.prototype.repository.ERepository;
 
 @CrossOrigin(origins ="*",allowedHeaders="*",maxAge=200000) 
 @RestController
