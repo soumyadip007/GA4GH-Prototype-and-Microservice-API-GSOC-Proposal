@@ -19,10 +19,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class ElasticConfiguration {
 
 
-    @Bean
-    public NodeBuilder nodeBuilder() {
-        return new NodeBuilder();
-    }
 
     @Bean
     public ElasticsearchOperations elasticsearchTemplate() throws IOException {
@@ -37,7 +33,7 @@ public class ElasticConfiguration {
                         .put("path.work", new File(tmpDir, "work").getAbsolutePath()) 
                         .put("path.home", tmpDir); 
 
-        return new ElasticsearchTemplate(nodeBuilder()
+        return new ElasticsearchTemplate(org.elasticsearch.node.NodeBuilder.nodeBuilder().node()
                 .local(true)
                 .settings(elasticsearchSettings.build())
                 .node()
