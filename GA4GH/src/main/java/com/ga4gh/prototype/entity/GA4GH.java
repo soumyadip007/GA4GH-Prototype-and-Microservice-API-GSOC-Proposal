@@ -17,7 +17,6 @@ import lombok.Setter;
 @Getter	
 @Setter	
 @Entity
-
 @Table(name = "ga4gh")
 @Document(indexName = "users")
 public class GA4GH {
