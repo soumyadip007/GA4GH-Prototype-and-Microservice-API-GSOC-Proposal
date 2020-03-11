@@ -7,6 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.data.elasticsearch.annotations.Document;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +17,9 @@ import lombok.Setter;
 @Getter	
 @Setter	
 @Entity
+
 @Table(name = "ga4gh")
+@Document(indexName = "users")
 public class GA4GH {
 
 
