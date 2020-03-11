@@ -5,6 +5,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ga4gh.prototype.entity.GA4GH;
 import com.ga4gh.prototype.repository.ERepository;
@@ -24,6 +25,7 @@ public class Loaders {
 	
 	
 	@PostConstruct
+	@Transactional
 	public void loadAll()
 	{
 		operations.putMapping(GA4GH.class);
