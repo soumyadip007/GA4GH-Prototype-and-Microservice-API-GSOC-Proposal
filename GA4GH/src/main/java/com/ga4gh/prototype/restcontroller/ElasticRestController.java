@@ -1,10 +1,8 @@
 package com.ga4gh.prototype.restcontroller;
 
-import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ga4gh.prototype.dao.ERepository;
 import com.ga4gh.prototype.entity.GA4GH;
-import com.ga4gh.prototype.service.GA4GHService;
 
 @CrossOrigin(origins ="*",allowedHeaders="*",maxAge=200000) 
 @RestController
@@ -22,16 +20,12 @@ import com.ga4gh.prototype.service.GA4GHService;
 public class ElasticRestController {
 
 	@Autowired  
-	private GA4GHService GA4GHService;
+	private ERepository	 GA4GHService;
 	
-
-
-	
-
 	@GetMapping("")
 	public List<GA4GH> FindAll() {
 	
-		return GA4GHService.findAll();
+		return (List<GA4GH>) GA4GHService.findAll();
 	}
 	
 	
@@ -44,19 +38,19 @@ public class ElasticRestController {
 	@GetMapping("/sequencename/{theId}")
 	public List<GA4GH> findBySequence_Name(@PathVariable String theId) {
 		
-		return GA4GHService.findBySequence_Name(theId);
+		return GA4GHService.findBySequencelength(theId);
 	}
 
 	@GetMapping("/genbank/{theId}")
 	public List<GA4GH> findByGenBank_Accn(@PathVariable String theId) {
 		
-		return GA4GHService.findByGenBank_Accn(theId);
+		return GA4GHService.findByGenbankaccn(theId);
 	}
 
 	@GetMapping("/refseq/{theId}")
 	public List<GA4GH> findByRefseq_Accn(@PathVariable String theId) {
 		
-		return GA4GHService.findByRefseq_Accn(theId);
+		return GA4GHService.findByRefseqaccn(theId);
 	}
 	
 	@GetMapping("/sequencelength/{theId}")
