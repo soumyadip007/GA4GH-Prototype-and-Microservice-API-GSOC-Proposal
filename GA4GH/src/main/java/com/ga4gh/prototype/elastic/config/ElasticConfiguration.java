@@ -1,5 +1,8 @@
 package com.ga4gh.prototype.elastic.config;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.node.NodeBuilder;
 import org.springframework.context.annotation.Bean;
@@ -8,9 +11,6 @@ import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
-import java.io.File;
-import java.io.IOException;
 
 @Configuration
 @EnableJpaRepositories(basePackages ="com.ga4gh.prototype.repository")
