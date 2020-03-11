@@ -1,11 +1,11 @@
 package com.ga4gh.prototype.elastic.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
-import org.elasticsearch.node.*;;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;;
 @Configuration
-@EnableElasticsearchRepositories(basePackages ="com.ga4gh.prototype.dao")
+@EnableJpaRepositories(basePackages ="com.ga4gh.prototype.repository")
+@EnableElasticsearchRepositories(basePackages ="com.ga4gh.prototype.elastic.repository")
 public class ElasticConfiguration {
 
 
