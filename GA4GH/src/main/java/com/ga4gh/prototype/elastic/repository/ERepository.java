@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ga4gh.prototype.entity.GA4GH;
 
-public interface ERepository extends ElasticsearchRepository<GA4GH, Long> {
+public interface ERepository extends ElasticsearchRepository<GA4GH, Integer> {
 
 	public GA4GH findById(int id);
 	
