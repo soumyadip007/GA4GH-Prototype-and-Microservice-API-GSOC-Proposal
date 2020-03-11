@@ -23,6 +23,6 @@ public class Loaders {
 	@PostConstruct
 	public void loadAll()
 	{
-		operations.putMapping(GA4GH.class);
+		//operations.putMapping(GA4GH.class);
 	}
 }
