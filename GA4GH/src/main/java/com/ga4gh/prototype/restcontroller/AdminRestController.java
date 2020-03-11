@@ -21,15 +21,10 @@ import com.ga4gh.prototype.service.GA4GHService;
 @RequestMapping("/admin")
 public class AdminRestController {
 
-	
+	@Autowired  
 	private GA4GHService GA4GHService;
 	
 
-	@Autowired   
-	public AdminRestController(GA4GHService GA4GHService)
-	{
-		this.GA4GHService=GA4GHService;
-	}
 
 	
 
