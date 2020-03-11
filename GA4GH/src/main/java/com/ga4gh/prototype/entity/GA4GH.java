@@ -19,7 +19,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "ga4gh")
 //@Document(indexName = "GA4GH", type="GA4GH", shards=1)
-@Document(indexName = "my_index", type = "user")
+@Document(indexName = "my_index", type = "GA4GH")
 public class GA4GH {
 
 
