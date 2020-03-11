@@ -1,5 +1,7 @@
 package com.ga4gh.prototype.elastic.loader;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,10 @@ public class Loaders {
 	public void loadAll()
 	{
 		operations.putMapping(GA4GH.class);
-		eRepository.save(GA4GHService.findAll());
+		List<GA4GH> obj=GA4GHService.findAll();
+		for(GA4GH o:obj)
+			eRepository.save(o);
+		
+		System.out.print("Data loaded into elastic search");
 	}
 }
