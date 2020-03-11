@@ -1,3 +1,4 @@
+package com.ga4gh.prototype.elastic.repository;
 //package com.ga4gh.prototype.repository;
 //
 //import static org.elasticsearch.index.query.QueryBuilders.matchAllQuery;
