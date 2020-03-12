@@ -5,10 +5,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ga4gh.prototype.security.MyUserDetailsService;
 import com.ga4gh.prototype.security.models.AuthenticationRequest;
 
 @RestController
@@ -16,6 +18,9 @@ public class JWTRestController {
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	MyUserDetailsService myUserDetailsService;
 	
 	@RequestMapping("/start")
 	public String start()
@@ -36,7 +41,9 @@ public class JWTRestController {
 			throw new Exception("Bad Credentioals");
 		}
 		
-		return null;
+		final UserDetails userDetails=myUserDetailsService
+				.loadUserByUsername(authenticateRequest.getUsername());
+		
 	}
 
 	
