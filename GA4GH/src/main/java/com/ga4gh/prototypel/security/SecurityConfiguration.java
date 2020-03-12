@@ -22,9 +22,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private DataSource securityDataSource;
-	
-	@Autowired
 	private MyUserDetailsService myUserDetailsService;
 
 	@Override
