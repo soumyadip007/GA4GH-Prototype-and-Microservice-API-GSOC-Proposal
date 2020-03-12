@@ -37,7 +37,7 @@ public class ERepoImp {
     }
     
     
-    public List<GA4GH>  getUserById(String userId) {
+    public List<GA4GH>  getById(String userId) {
         SearchQuery searchQuery = new NativeSearchQueryBuilder()
                 .withFilter(QueryBuilders.matchQuery("sequencename", userId)).build();
         List<GA4GH> users = esTemplate.queryForList(searchQuery, GA4GH.class);
@@ -46,4 +46,20 @@ public class ERepoImp {
 //        }
         return users;
     }
+    
+    
+    public List<GA4GH> getAllSequencename(String sequencename) {
+
+        SearchQuery searchQuery = new NativeSearchQueryBuilder()
+                .withFilter(QueryBuilders.matchQuery("sequencename", sequencename)).build();
+        List<GA4GH> users = esTemplate.queryForList(searchQuery, GA4GH.class);
+  
+        return users;
+    }
+    
+    
+    
+    
+    
+    
 }
