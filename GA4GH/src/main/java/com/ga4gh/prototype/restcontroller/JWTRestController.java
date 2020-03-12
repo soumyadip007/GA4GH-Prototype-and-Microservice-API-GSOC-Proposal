@@ -33,7 +33,7 @@ public class JWTRestController {
 		return "GA4GH";
 	}
 	
-	@RequestMapping(value="/authinticate", method = RequestMethod.POST)
+	@RequestMapping(value="/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken
 				(@RequestBody AuthenticationRequest authenticateRequest) throws Exception
 	{
