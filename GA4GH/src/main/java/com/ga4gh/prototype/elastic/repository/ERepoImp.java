@@ -44,16 +44,16 @@ public class ERepoImp {
     	 return users;
     }
     
-    
-    public List<GA4GH>  getById(String userId) {
-        SearchQuery searchQuery = new NativeSearchQueryBuilder()
-                .withFilter(QueryBuilders.matchQuery("sequencename", userId)).build();
-        List<GA4GH> users = esTemplate.queryForList(searchQuery, GA4GH.class);
-//        if(!users.isEmpty()) {
-//            return users.get(0);
-//        }
-        return users;
-    }
+//    
+//    public List<GA4GH>  getById(String userId) {
+//        SearchQuery searchQuery = new NativeSearchQueryBuilder()
+//                .withFilter(QueryBuilders.matchQuery("sequencename", userId)).build();
+//        List<GA4GH> users = esTemplate.queryForList(searchQuery, GA4GH.class);
+////        if(!users.isEmpty()) {
+////            return users.get(0);
+////        }
+//        return users;
+//    }
     
     
     public List<GA4GH> getAllSequencename(String sequencename) {
