@@ -47,6 +47,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 	
+	
+	@Override
+	@Bean
+	public AuthenticationManager authenticationManager() throws Exception{
+		return super.authenticationManagerBean();
+	}
 
 	@Bean
 	public PasswordEncoder passwordEncoder()
@@ -55,11 +61,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	}
 	
 	
-	@Override
-	@Bean
-	public AuthenticationManager authenticationManager() throws Exception{
-		return super.authenticationManagerBean();
-	}
+	
 	
 
 }
