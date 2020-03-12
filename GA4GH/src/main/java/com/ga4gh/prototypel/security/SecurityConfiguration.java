@@ -27,8 +27,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private DataSource securityDataSource;
 	
+	@Autowired
+	private MyUserDetailsService myUserDetailsService;
 
-
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(myUserDetailsService);
+	}
+	
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
