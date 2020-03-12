@@ -30,21 +30,19 @@ public class GA4GH {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
-	int id;		
+	private int id;		
 
 
 	@Column(name = "sequencename")
-	String sequencename;	
+	private String sequencename;	
 	
 	@Column(name = "genbankaccn")
-	String genbankaccn;	
+	private String genbankaccn;	
 	
 	@Column(name = "refseqaccn")
-	String refseqaccn;		
+	private String refseqaccn;		
 	
 
 	@Column(name = "sequencelength")
-	String sequencelength;
-
-	 private Map<String, String> userSettings = new HashMap<>();
+	private String sequencelength;
 }
