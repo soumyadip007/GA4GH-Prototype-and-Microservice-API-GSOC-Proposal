@@ -31,6 +31,13 @@ public class ERepoImp {
     }
   
     public List<GA4GH> getAllUsers() {
+    	
+    	System.out.println("Debug");
+    	System.out.println("Debug");
+    	System.out.println("Debug");
+    	System.out.println("Debug");
+    	System.out.println("Debug");
+    	
         SearchQuery getAllQuery = new NativeSearchQueryBuilder()
                 .withQuery(matchAllQuery()).build();
         return esTemplate.queryForList(getAllQuery, GA4GH.class);
