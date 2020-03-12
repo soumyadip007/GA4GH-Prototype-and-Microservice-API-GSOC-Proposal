@@ -48,7 +48,8 @@ public class JWTRestController {
 				.loadUserByUsername(authenticateRequest.getUsername());
 		
 		
-		final String jwt=jwtUtil.ge
+		final String jwt=jwtutil.generateToken(userDetails);
+	
 	}
 
 	
