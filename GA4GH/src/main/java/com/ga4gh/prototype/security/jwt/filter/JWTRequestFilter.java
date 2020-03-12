@@ -7,7 +7,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.ga4gh.prototype.security.MyUserDetailsService;
+import com.ga4gh.prototype.security.jwt.JWTUtil;
 
 /**
  * 
@@ -17,6 +21,12 @@ import org.springframework.web.filter.OncePerRequestFilter;
  */
 public class JWTRequestFilter extends OncePerRequestFilter {
 
+	@Autowired
+	MyUserDetailsService myUserDetailsService;
+	
+	@Autowired
+	JWTUtil jwtutil;
+	
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
