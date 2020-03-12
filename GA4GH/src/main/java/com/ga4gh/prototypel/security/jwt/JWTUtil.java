@@ -30,4 +30,8 @@ public class JWTUtil {
 	public Claims extractAllClaims(String token) {
 		return Jwts.parser().setSigningKey(Secret_Key).parseClaimsJws(token).getBody();
 	}
+	
+	public Boolean isTokenExpired(String token) {
+		return extractExpiration(token).before(new Date());
+	}
 }
