@@ -1,6 +1,9 @@
 package com.ga4gh.prototype.entity;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +22,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "ga4gh")
 //@Document(indexName = "GA4GH", type="GA4GH", shards=1)
-@Document(indexName = "my_index", type = "user")
+@Document(indexName = "my_index", type = "GA4GH")
 public class GA4GH {
 
 
@@ -43,5 +46,5 @@ public class GA4GH {
 	@Column(name = "sequencelength")
 	String sequencelength;
 
-
+	 private Map<String, String> userSettings = new HashMap<>();
 }
