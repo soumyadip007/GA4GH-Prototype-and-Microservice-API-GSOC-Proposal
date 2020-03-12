@@ -1,4 +1,4 @@
-package com.ga4gh.prototypel.security;
+package com.ga4gh.prototype.security;
 
 import javax.sql.DataSource;
 
