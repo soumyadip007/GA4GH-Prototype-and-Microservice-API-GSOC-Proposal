@@ -6,6 +6,7 @@ import java.util.function.Function;
 import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
 
 @Service 
 public class JWTUtil {
@@ -23,7 +24,10 @@ public class JWTUtil {
 	public <T> T extractClaim(String token, Function<Claims,T> claimsResolver){
 		
 		final Claims claims=extractAllClaims(token);
-		return claimsResolver.apply(claims);
-		
+		return claimsResolver.apply(claims);	
+	}
+	
+	public Claims extractAllClaims(String token) {
+		return Jwts.parser().setSigningKey(Secret_Key).parseClaimsJws(token).getBody();
 	}
 }
