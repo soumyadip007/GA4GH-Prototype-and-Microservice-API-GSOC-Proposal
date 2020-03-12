@@ -1,6 +1,7 @@
 package com.ga4gh.prototypel.security.jwt;
 
 import java.util.Date;
+import java.util.function.Function;
 
 import org.springframework.stereotype.Service;
 
@@ -16,8 +17,13 @@ public class JWTUtil {
 	}
 	
 	public Date extractExpiration(String token) {
-		return extractClaim(token, Claims::getExperiation);
+		return extractClaim(token, Claims::getExpiration);
 	}
 	
-	
+	public <T> T extractClaim(String token, Function<Claims,T> claimsResolver){
+		
+		final Claims claims=extractAllClaims(token);
+		return claimsResolver.apply(claims);
+		
+	}
 }
