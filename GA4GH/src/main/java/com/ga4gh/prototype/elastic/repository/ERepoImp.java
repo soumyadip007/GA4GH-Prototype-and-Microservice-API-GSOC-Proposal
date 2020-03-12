@@ -18,7 +18,7 @@ import com.ga4gh.prototype.entity.GA4GH;
 @Repository("ERepoImp")
 public class ERepoImp {
 
-	private final Logger LOG = LoggerFactory.getLogger(getClass());
+	//private final Logger LOG = LoggerFactory.getLogger(getClass());
 
 
     @Autowired
@@ -56,10 +56,5 @@ public class ERepoImp {
   
         return users;
     }
-    
-    
-    
-    
-    
     
 }
