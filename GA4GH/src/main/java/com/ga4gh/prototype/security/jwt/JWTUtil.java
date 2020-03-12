@@ -11,7 +11,12 @@ import org.springframework.stereotype.Service;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-
+/**
+ * 
+ * @author Soumyadip Chowdhury
+ * @github soumyadip007
+ *
+ */
 @Service 
 public class JWTUtil {
 
