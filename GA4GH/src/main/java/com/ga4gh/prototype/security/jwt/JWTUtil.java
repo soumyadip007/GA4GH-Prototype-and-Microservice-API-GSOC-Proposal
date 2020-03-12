@@ -1,4 +1,4 @@
-package com.ga4gh.prototypel.security.jwt;
+package com.ga4gh.prototype.security.jwt;
 
 import java.util.Date;
 import java.util.HashMap;
