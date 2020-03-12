@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ga4gh.prototype.entity.GA4GH;
 
-@Repository
+@Repository("ERepoImp")
 public class ERepoImp {
 
 	private final Logger LOG = LoggerFactory.getLogger(getClass());
