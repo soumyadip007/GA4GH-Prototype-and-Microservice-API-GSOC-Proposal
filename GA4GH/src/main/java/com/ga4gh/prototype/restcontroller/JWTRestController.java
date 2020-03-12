@@ -7,6 +7,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ga4gh.prototype.security.MyUserDetailsService;
@@ -32,6 +33,7 @@ public class JWTRestController {
 		return "GA4GH";
 	}
 	
+	@RequestMapping(value="/authinticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken
 	(@RequestBody AuthenticationRequest authenticateRequest) throws Exception
 	{
