@@ -3,6 +3,7 @@ package com.ga4gh.prototypel.security.jwt;
 import java.util.Date;
 import java.util.function.Function;
 
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Claims;
@@ -33,5 +34,9 @@ public class JWTUtil {
 	
 	public Boolean isTokenExpired(String token) {
 		return extractExpiration(token).before(new Date());
+	}
+	
+	public String generateToken(UserDetails userDetails) {
+		
 	}
 }
