@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ga4gh.prototype.security.MyUserDetailsService;
 import com.ga4gh.prototype.security.jwt.JWTUtil;
 import com.ga4gh.prototype.security.models.AuthenticationRequest;
+import com.ga4gh.prototype.security.models.AuthenticationResponse;
 
 @RestController
 public class JWTRestController {
@@ -50,6 +51,8 @@ public class JWTRestController {
 		
 		final String jwt=jwtutil.generateToken(userDetails);
 	
+		
+		return ResponseEntity.ok(new AuthenticationResponse(jwt));
 	}
 
 	
