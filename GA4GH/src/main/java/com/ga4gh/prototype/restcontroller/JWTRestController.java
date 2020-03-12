@@ -35,7 +35,7 @@ public class JWTRestController {
 	
 	@RequestMapping(value="/authinticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken
-	(@RequestBody AuthenticationRequest authenticateRequest) throws Exception
+				(@RequestBody AuthenticationRequest authenticateRequest) throws Exception
 	{
 
 		try {
