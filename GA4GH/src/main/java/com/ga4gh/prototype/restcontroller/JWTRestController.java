@@ -38,23 +38,25 @@ public class JWTRestController {
 				(@RequestBody AuthenticationRequest authenticateRequest) throws Exception
 	{
 
-		try {
-		authenticationManager.authenticate(	
-				new UsernamePasswordAuthenticationToken(authenticateRequest.getUsername(), 
-						authenticateRequest.getPassword()));
-		}
-		catch (BadCredentialsException e) {
-			throw new Exception("Bad Credentioals");
-		}
+		System.out.print(authenticateRequest.toString());
 		
-		final UserDetails userDetails=myUserDetailsService
-				.loadUserByUsername(authenticateRequest.getUsername());
+//		try {
+//		authenticationManager.authenticate(	
+//				new UsernamePasswordAuthenticationToken(authenticateRequest.getUsername(), 
+//						authenticateRequest.getPassword()));
+//		}
+//		catch (BadCredentialsException e) {
+//			throw new Exception("Bad Credentioals");
+//		}
+//		
+//		final UserDetails userDetails=myUserDetailsService
+//				.loadUserByUsername(authenticateRequest.getUsername());
+//		
+//		
+//		final String jwt=jwtutil.generateToken(userDetails);
+//	
 		
-		
-		final String jwt=jwtutil.generateToken(userDetails);
-	
-		
-		return ResponseEntity.ok(new AuthenticationResponse(jwt));
+		return null;
 	}
 
 	

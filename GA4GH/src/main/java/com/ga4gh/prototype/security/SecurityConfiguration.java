@@ -29,8 +29,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private MyUserDetailsService myUserDetailsService;
 
-	@Autowired
-	JWTRequestFilter jwtRequestFilter;
+	//@Autowired
+	//JWTRequestFilter jwtRequestFilter;
 	
 	
 	@Override
@@ -43,9 +43,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 		http.csrf().disable()
 			.authorizeRequests().antMatchers("/authenticate").permitAll()
-			.anyRequest().authenticated()
-			.and().sessionManagement().
-			sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+			.anyRequest().authenticated();
+		//	.and().sessionManagement().
+		//	sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	
 	//	http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 	}
