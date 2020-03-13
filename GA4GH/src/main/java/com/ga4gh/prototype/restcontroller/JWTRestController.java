@@ -38,25 +38,39 @@ public class JWTRestController {
 				(@RequestBody AuthenticationRequest authenticateRequest) throws Exception
 	{
 
-		System.out.print(authenticateRequest.toString());
+		System.out.println(authenticateRequest.getUsername());
+		System.out.println(authenticateRequest.getUsername());
+		System.out.println(authenticateRequest.getPassword());
 		
-//		try {
-//		authenticationManager.authenticate(	
-//				new UsernamePasswordAuthenticationToken(authenticateRequest.getUsername(), 
-//						authenticateRequest.getPassword()));
-//		}
-//		catch (BadCredentialsException e) {
-//			throw new Exception("Bad Credentioals");
-//		}
-//		
-//		final UserDetails userDetails=myUserDetailsService
-//				.loadUserByUsername(authenticateRequest.getUsername());
-//		
-//		
-//		final String jwt=jwtutil.generateToken(userDetails);
-//	
+		try {
+			
+			System.out.println("With in TRY");
+			
+			UsernamePasswordAuthenticationToken obj=new UsernamePasswordAuthenticationToken(authenticateRequest.getUsername(), 
+					authenticateRequest.getPassword());
+			
+			System.out.println(obj.toString());
+			
+			authenticationManager.authenticate(obj);
+		}
+		catch (BadCredentialsException e) {
+			//	throw new Exception("Bad Credentioals");
+				
+				e.printStackTrace();
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+			//	e.printStackTrace();
+			}
+		System.out.println("After Catch");
+	
+		final UserDetails userDetails=myUserDetailsService
+				.loadUserByUsername(authenticateRequest.getUsername());
+	
+		final String jwt=jwtutil.generateToken(userDetails);
+	
 		
-		return null;
+		return  ResponseEntity.ok(new AuthenticationResponse(jwt));
 	}
 
 	
