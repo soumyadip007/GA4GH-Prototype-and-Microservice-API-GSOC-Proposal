@@ -44,8 +44,6 @@ public class JWTRestController {
 		
 		try {
 			
-			System.out.println("With in TRY");
-			
 			UsernamePasswordAuthenticationToken obj=new UsernamePasswordAuthenticationToken(authenticateRequest.getUsername(), 
 					authenticateRequest.getPassword());
 			
@@ -54,21 +52,21 @@ public class JWTRestController {
 			authenticationManager.authenticate(obj);
 		}
 		catch (BadCredentialsException e) {
-			//	throw new Exception("Bad Credentioals");
-				
+
 				e.printStackTrace();
+				throw new Exception("Bad Credentioals");
+				
 		}
 		catch (Exception e) {
-			System.out.println(e.getMessage());
-			//	e.printStackTrace();
-			}
-		System.out.println("After Catch");
-	
+				
+				e.printStackTrace();
+			
+		}
+
 		final UserDetails userDetails=myUserDetailsService
 				.loadUserByUsername(authenticateRequest.getUsername());
 	
 		final String jwt=jwtutil.generateToken(userDetails);
-	
 		
 		return  ResponseEntity.ok(new AuthenticationResponse(jwt));
 	}
