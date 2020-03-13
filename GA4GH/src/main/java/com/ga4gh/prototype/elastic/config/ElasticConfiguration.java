@@ -21,19 +21,25 @@
 //
 //
 //    @Bean
+//    public NodeBuilder nodeBuilder() {
+//        return new NodeBuilder();
+//    }
+//
+//    @Bean
 //    public ElasticsearchOperations elasticsearchTemplate() throws IOException {
 //        File tmpDir = File.createTempFile("elastic", Long.toString(System.nanoTime()));
 //        System.out.println("Temp directory: " + tmpDir.getAbsolutePath());
 //        Settings.Builder elasticsearchSettings =
-//                Settings.builder()
-//                        .put("http.enabled", "true") 
+//                Settings.settingsBuilder()
+//                        .put("http.enabled", "true") // 1
 //                        .put("index.number_of_shards", "1")
-//                        .put("path.data", new File(tmpDir, "data").getAbsolutePath()) 
-//                        .put("path.logs", new File(tmpDir, "logs").getAbsolutePath()) 
-//                        .put("path.work", new File(tmpDir, "work").getAbsolutePath()) 
-//                        .put("path.home", tmpDir); 
+//                        .put("path.data", new File(tmpDir, "data").getAbsolutePath()) // 2
+//                        .put("path.logs", new File(tmpDir, "logs").getAbsolutePath()) // 2
+//                        .put("path.work", new File(tmpDir, "work").getAbsolutePath()) // 2
+//                        .put("path.home", tmpDir); // 3
 //
-//        return new ElasticsearchTemplate(org.elasticsearch.node.NodeBuilder.nodeBuilder().node()
+//
+//        return new ElasticsearchTemplate(nodeBuilder().node()
 //                .local(true)
 //                .settings(elasticsearchSettings.build())
 //                .node()

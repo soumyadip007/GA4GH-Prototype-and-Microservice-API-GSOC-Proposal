@@ -13,6 +13,7 @@
 //
 //import com.ga4gh.prototype.entity.GA4GH;
 //
+//
 //@Repository("ERepoImp")
 //public class ERepoImp {
 //
@@ -20,13 +21,9 @@
 //
 //
 //    @Autowired
-//    private ElasticsearchTemplate esTemplate;
+//    private ElasticTemplateDependency esTemplate;
 //
 //    
-//    public ERepoImp(ElasticsearchTemplate e)
-//    {
-//    	esTemplate=e;
-//    }
 //  
 //    public List<GA4GH> getAllUsers() {
 //    	

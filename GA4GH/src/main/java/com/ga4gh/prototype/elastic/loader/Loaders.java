@@ -9,8 +9,8 @@
 //import org.springframework.stereotype.Component;
 //import org.springframework.transaction.annotation.Transactional;
 //
+//import com.ga4gh.prototype.elastic.repository.ERepository;
 //import com.ga4gh.prototype.entity.GA4GH;
-//import com.ga4gh.prototype.repository.ERepository;
 //import com.ga4gh.prototype.service.GA4GHService;
 //
 //@Component
