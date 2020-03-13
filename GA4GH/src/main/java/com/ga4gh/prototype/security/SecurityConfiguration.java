@@ -28,8 +28,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private MyUserDetailsService myUserDetailsService;
 
-//	@Autowired
-//	JWTRequestFilter jwtRequestFilter;
+	@Autowired
+	JWTRequestFilter jwtRequestFilter;
 	
 	
 	@Override
@@ -46,7 +46,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.and().sessionManagement().
 			sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	
-		//http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 	
 	

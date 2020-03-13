@@ -39,19 +39,35 @@ public class JWTRequestFilter extends OncePerRequestFilter {
 		
 		final String authizationHeader=request.getHeader("Authorization");
 		
+		System.out.println("AuthizationHeader->"+authizationHeader);
+		
 		String username=null;
 		String jwt=null;
 		
-		if(authizationHeader!=null && authizationHeader.startsWith("GA4GH")) {
-			jwt=authizationHeader.substring(4);
+		if(authizationHeader!=null && authizationHeader.startsWith("Bearer")) {
+			jwt=authizationHeader.substring(7);
 			username=jwtutil.extractUsername(jwt);
+			
+			System.out.println("JWT->"+jwt);
+			System.out.println("Username->"+username);
 		}
 		
+		System.out.println("doFilterInternal");
+		System.out.println("doFilterInternal");
+		
+		
 		if(username!=null && SecurityContextHolder.getContext().getAuthentication()==null) {
+			
 			UserDetails userDetails=this.myUserDetailsService.loadUserByUsername(username);
 			
+			System.out.println("Token is Before Valid");
+			System.out.println("Token is Before Valid");
 			if(jwtutil.validateToken(jwt, userDetails))
 			{
+				System.out.println("Token is Valid");
+				System.out.println("Token is Valid");
+				System.out.println("Token is Valid");
+				System.out.println("Token is Valid");
 				UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken=
 						new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 				
