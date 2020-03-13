@@ -12,6 +12,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.ga4gh.prototype.security.MyUserDetailsService;
@@ -23,6 +24,7 @@ import com.ga4gh.prototype.security.jwt.JWTUtil;
  * @github soumyadip007
  *
  */
+@Component
 public class JWTRequestFilter extends OncePerRequestFilter {
 
 	@Autowired
