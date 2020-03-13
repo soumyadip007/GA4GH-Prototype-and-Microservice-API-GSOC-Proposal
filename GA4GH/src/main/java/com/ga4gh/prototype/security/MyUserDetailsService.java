@@ -21,7 +21,7 @@ public class MyUserDetailsService implements UserDetailsService  {
 	public UserDetails loadUserByUsername(String username) throws
 											UsernameNotFoundException{
 											
-		return new User("foo","foo",new ArrayList<>());
+		return new User("GA4GH_USER","GA4GH_PASS",new ArrayList<>());
 		
 	}
 	

@@ -40,7 +40,7 @@ public class JWTRequestFilter extends OncePerRequestFilter {
 		String username=null;
 		String jwt=null;
 		
-		if(authizationHeader!=null && authizationHeader.startsWith("JWT")) {
+		if(authizationHeader!=null && authizationHeader.startsWith("GA4GH")) {
 			jwt=authizationHeader.substring(4);
 			username=jwtutil.extractUsername(jwt);
 		}
