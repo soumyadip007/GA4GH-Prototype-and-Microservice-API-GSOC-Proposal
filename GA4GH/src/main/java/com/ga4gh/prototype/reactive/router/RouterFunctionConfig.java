@@ -15,7 +15,6 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 
 
 @Configuration
-@RequestMapping
 public class RouterFunctionConfig {
 	
 	@Bean

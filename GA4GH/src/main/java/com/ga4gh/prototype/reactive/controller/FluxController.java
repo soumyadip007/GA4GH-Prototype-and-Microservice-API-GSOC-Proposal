@@ -15,7 +15,6 @@ import com.ga4gh.prototype.service.GA4GHService;
 import reactor.core.publisher.Flux;
 
 @RestController
-
 public class FluxController {
 
 //	@Autowired  
