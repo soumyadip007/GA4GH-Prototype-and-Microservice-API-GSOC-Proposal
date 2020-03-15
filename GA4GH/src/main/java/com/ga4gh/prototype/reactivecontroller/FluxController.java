@@ -42,7 +42,7 @@ public class FluxController {
 	}
 	
 	
-	@GetMapping(value="/xGA4GH", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="/GA4GH", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Flux<List<GA4GH>> ga4ghFluxaLL()
 	{
 		List<GA4GH> ls=GA4GHService.findAll();
