@@ -3,6 +3,7 @@ package com.ga4gh.prototype.reactive.router;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.reactive.function.server.HandlerFunction;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
@@ -14,6 +15,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 
 
 @Configuration
+@RequestMapping
 public class RouterFunctionConfig {
 	
 	@Bean
