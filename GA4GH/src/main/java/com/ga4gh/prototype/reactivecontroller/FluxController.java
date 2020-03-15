@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 @RestController
-@RequestMapping("/flux")
 public class FluxController {
 
-	@GetMapping("/hello")
+	@GetMapping("/flux")
 	public Flux<String> ga4ghFlux()
 	{
 		return Flux.just("GA4GH",
