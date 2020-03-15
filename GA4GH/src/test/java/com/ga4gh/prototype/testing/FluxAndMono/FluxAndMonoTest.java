@@ -42,5 +42,40 @@ public class FluxAndMonoTest {
 	}
 	
 
+	@Test
+	public void fluxTesstElements_WithError() {
+		
+		Flux<String> ga4ghFlux=Flux.just("GA4GH",
+				"genbankaccn","refseqaccn","sequencelength")
+				.concatWith(Flux.error(new RuntimeException("Exception OfluxTesstElements_WithoutErrorcc()")))
+				.log();
+		
+		StepVerifier.create(ga4ghFlux)
+		.expectNext("GA4GH")
+		.expectNext("genbankaccn")
+		.expectNext("refseqaccn")
+		.expectNext("sequencelength")
+		.expectError(RuntimeException.class)
+		//.expectErrorMessage("Exception OfluxTesstElements_WithoutErrorcc()")
+		//.verifyComplete()
+		.verify();  
+		
+	}
 	
+
+	@Test
+	public void fluxTesstElements_WithError1() {
+		
+		Flux<String> ga4ghFlux=Flux.just("GA4GH",
+				"genbankaccn","refseqaccn","sequencelength")
+				.concatWith(Flux.error(new RuntimeException("Exception OfluxTesstElements_WithoutErrorcc()")))
+				.log();
+		
+		StepVerifier.create(ga4ghFlux)
+		.expectNext("GA4GH","genbankaccn","refseqaccn","sequencelength")
+		.expectError(RuntimeException.class)
+		//.expectErrorMessage("Exception OfluxTesstElements_WithoutErrorcc()")
+		.verify();  
+		
+	}
 }
