@@ -12,5 +12,7 @@ public class FluxAndMonoTest {
 	{
 		Flux<String> ga4ghFlux=Flux.just("Spring Boot","Spring MVC", "GA4GH");
 		
+		ga4ghFlux
+			.subscribe(System.out::println);
 	}
 }
