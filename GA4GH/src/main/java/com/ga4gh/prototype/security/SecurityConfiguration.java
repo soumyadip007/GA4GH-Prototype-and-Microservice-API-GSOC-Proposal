@@ -44,6 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.authorizeRequests().antMatchers("/authenticate").permitAll()
 			.antMatchers("/**").permitAll()
 			.antMatchers("/user/**").permitAll()
+			.antMatchers("/ga4gh/**").permitAll()
 			.anyRequest().authenticated()
 			.and().sessionManagement().
 			sessionCreationPolicy(SessionCreationPolicy.STATELESS);
