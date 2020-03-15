@@ -29,12 +29,15 @@ public class FluxAndMonoTest {
 	public void fluxTesstElements_WithoutError() {
 		
 		Flux<String> ga4ghFlux=Flux.just("GA4GH",
-				"genbankaccn","refseqaccn","sequencelength","sequencename")
+				"genbankaccn","refseqaccn","sequencelength")
 				.log();
 		
 		StepVerifier.create(ga4ghFlux)
 		.expectNext("GA4GH")
 		.expectNext("genbankaccn")
-		.verifyComplete();
+		.expectNext("refseqaccn")
+		.expectNext("sequencelength")
+		.verifyComplete();  
+		
 	}
 }
