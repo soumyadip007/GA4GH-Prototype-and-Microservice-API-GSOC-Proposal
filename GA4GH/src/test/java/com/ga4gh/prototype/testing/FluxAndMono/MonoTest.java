@@ -1,5 +1,7 @@
 package com.ga4gh.prototype.testing.FluxAndMono;
 
+import javax.management.RuntimeErrorException;
+
 import org.junit.Test;
 
 import reactor.core.publisher.Mono;
@@ -16,5 +18,14 @@ public class MonoTest {
 		StepVerifier.create(ga4ghMono)
 		.expectNext("GA4GH")
 		.verifyComplete();
+	}
+	
+	@Test
+	public void monoError()
+	{
+		
+		StepVerifier.create(Mono.error(new RuntimeErrorException(null,"Exception in mono")).log())
+		.expectError(RuntimeException.class)
+		.verify();
 	}
 }
