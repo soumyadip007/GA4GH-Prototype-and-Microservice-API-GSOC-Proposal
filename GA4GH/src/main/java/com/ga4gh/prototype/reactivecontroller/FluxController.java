@@ -15,13 +15,13 @@ import com.ga4gh.prototype.service.GA4GHService;
 import reactor.core.publisher.Flux;
 
 @RestController
-@RequestMapping("/flux")
+
 public class FluxController {
 
 //	@Autowired  
 //	private GA4GHService GA4GHService;
 
-	@GetMapping("")
+	@GetMapping("/flux")
 	public Flux<String> ga4ghFlux()
 	{
 		return Flux.just("GA4GH",
