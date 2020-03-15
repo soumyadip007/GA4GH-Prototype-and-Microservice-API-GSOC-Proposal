@@ -10,7 +10,8 @@ public class MonoTest {
 	@Test
 	public void monoTest()
 	{
-		Mono ga4ghMono=Mono.just("GA4GH");
+		Mono ga4ghMono=Mono.just("GA4GH")
+				.log();
 		
 		StepVerifier.create(ga4ghMono)
 		.expectNext("GA4GH")
