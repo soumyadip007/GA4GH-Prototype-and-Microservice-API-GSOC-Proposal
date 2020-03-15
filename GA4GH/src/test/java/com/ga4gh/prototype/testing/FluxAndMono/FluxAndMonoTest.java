@@ -39,7 +39,7 @@ public class FluxAndMonoTest {
 		.expectNext("refseqaccn")
 		.expectNext("sequencelength")
 		.expectError(RuntimeException.class)
-	//	.expectErrorMessage("Exception Here")
+		//.expectErrorMessage("Exception OfluxTesstElements_WithoutErrorcc()")
 		//.verifyComplete()
 		.verify();  
 		
