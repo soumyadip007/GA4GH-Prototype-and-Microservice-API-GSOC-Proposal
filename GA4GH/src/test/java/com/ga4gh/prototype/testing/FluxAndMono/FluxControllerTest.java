@@ -22,8 +22,8 @@ public class FluxControllerTest {
 	@Test
 	public void flux_approch1() {
 		
-		Flux<String> responseBody = webTestClient.get().uri("/flux/stream")
-		.accept(MediaType.APPLICATION_JSON_UTF8)
+		Flux<String> responseBody = webTestClient.get().uri("/flux")
+		//.accept(MediaType.APPLICATION_JSON_UTF8)
 		.exchange()
 		.expectStatus().isOk()
 		.returnResult(String.class)
