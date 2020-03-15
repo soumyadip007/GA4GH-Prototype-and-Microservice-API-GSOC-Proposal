@@ -13,6 +13,7 @@ public class FluxAndMonoTest {
 		Flux<String> ga4ghFlux=Flux.just("GA4GH",
 				"genbankaccn","refseqaccn","sequencelength","sequencename")
 				.concatWith(Flux.error(new RuntimeException("Exception Occ")))
+				.concatWith((Flux.just("Exception Occ")))
 				.log();
 		
 		
