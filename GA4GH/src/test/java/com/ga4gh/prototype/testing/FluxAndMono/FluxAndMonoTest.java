@@ -30,7 +30,6 @@ public class FluxAndMonoTest {
 		
 		Flux<String> ga4ghFlux=Flux.just("GA4GH",
 				"genbankaccn","refseqaccn","sequencelength")
-				.concatWith(Flux.error(new RuntimeException("Exception OfluxTesstElements_WithoutErrorcc()")))
 				.log();
 		
 		StepVerifier.create(ga4ghFlux)
@@ -38,10 +37,10 @@ public class FluxAndMonoTest {
 		.expectNext("genbankaccn")
 		.expectNext("refseqaccn")
 		.expectNext("sequencelength")
-		.expectError(RuntimeException.class)
-		//.expectErrorMessage("Exception OfluxTesstElements_WithoutErrorcc()")
-		//.verifyComplete()
-		.verify();  
+		.verifyComplete();  
 		
 	}
+	
+
+	
 }
