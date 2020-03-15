@@ -20,10 +20,10 @@ public class RouterFunctionConfig {
 	public RouterFunction<ServerResponse> route(GA4GHReactiveHandler reactiveHandler)
 	{
 		return RouterFunctions
-			.route(GET("/ga4gh/flux")
+			.route(GET("/functional/flux")
 					.and(accept(MediaType.APPLICATION_JSON))
 							,reactiveHandler::flux)
-			.andRoute(GET("/ga4gh/mono")
+			.andRoute(GET("/functional/flux")
 					.and(accept(MediaType.APPLICATION_JSON))
 							,reactiveHandler::mono);
 	
