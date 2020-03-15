@@ -3,6 +3,7 @@ package com.ga4gh.prototype.testing.FluxAndMono;
 import org.junit.Test;
 
 import reactor.core.publisher.Flux;
+import reactor.test.StepVerifier;
 
 public class FluxAndMonoTest {
 
@@ -12,7 +13,7 @@ public class FluxAndMonoTest {
 	{
 		Flux<String> ga4ghFlux=Flux.just("GA4GH",
 				"genbankaccn","refseqaccn","sequencelength","sequencename")
-				.concatWith(Flux.error(new RuntimeException("Exception Occ")))
+				//.concatWith(Flux.error(new RuntimeException("Exception Occ")))
 				.concatWith((Flux.just("After Error")))
 				.log();
 		
@@ -21,5 +22,19 @@ public class FluxAndMonoTest {
 			.subscribe(System.out::println,
 					(e)->System.err.println("Exception is "+e)
 					,()->System.out.println("Completed"));
+	}
+	
+	
+	@Test
+	public void fluxTesstElements_WithoutError() {
+		
+		Flux<String> ga4ghFlux=Flux.just("GA4GH",
+				"genbankaccn","refseqaccn","sequencelength","sequencename")
+				.log();
+		
+		StepVerifier.create(ga4ghFlux)
+		.expectNext("GA4GH")
+		.expectNext("genbankaccn")
+		.verifyComplete();
 	}
 }
