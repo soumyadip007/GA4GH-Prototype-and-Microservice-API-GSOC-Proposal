@@ -7,7 +7,7 @@ import org.springframework.web.reactive.function.server.HandlerFunction;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import com.ga4gh.prototype.reactive.handler.ReactiveHandler;
+import com.ga4gh.prototype.reactive.handler.GA4GHReactiveHandler;
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 
@@ -16,7 +16,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 public class RouterFunctionConfig {
 	
 	@Bean
-	public RouterFunction<ServerResponse> route(ReactiveHandler reactiveHandler)
+	public RouterFunction<ServerResponse> route(GA4GHReactiveHandler reactiveHandler)
 	{
 		return RouterFunctions
 			.route(GET("/f/f")
