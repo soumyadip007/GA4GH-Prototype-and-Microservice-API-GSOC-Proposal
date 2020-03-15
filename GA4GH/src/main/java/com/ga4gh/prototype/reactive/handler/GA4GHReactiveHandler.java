@@ -21,4 +21,13 @@ public class GA4GHReactiveHandler {
 				
 	}
 	
+	public Mono<ServerResponse> mono(ServerRequest serverRequest){
+		
+		return ServerResponse.ok()
+				.contentType(MediaType.APPLICATION_JSON)
+				.body(
+				Mono.just("GA4GH").log(), String.class);
+				
+	}
+	
 }
