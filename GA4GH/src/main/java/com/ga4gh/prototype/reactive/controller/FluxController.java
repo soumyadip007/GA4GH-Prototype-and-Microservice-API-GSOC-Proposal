@@ -1,4 +1,4 @@
-package com.ga4gh.prototype.reactivecontroller;
+package com.ga4gh.prototype.reactive.controller;
 
 import java.time.Duration;
 import java.util.List;
