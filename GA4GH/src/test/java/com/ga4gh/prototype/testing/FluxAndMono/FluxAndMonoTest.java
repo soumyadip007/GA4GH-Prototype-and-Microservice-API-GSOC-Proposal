@@ -18,7 +18,6 @@ public class FluxAndMonoTest {
 		
 		ga4ghFlux
 			.subscribe(System.out::println,
-					(e)->System.err.println(e)
-					);
+					(e)->System.err.println("Exception is "+e));
 	}
 }
