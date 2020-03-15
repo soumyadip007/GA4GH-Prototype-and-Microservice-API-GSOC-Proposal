@@ -10,7 +10,7 @@ public class FluxAndMonoTest {
 	@Test
 	public void fluxTest()
 	{
-		Flux.just("Spring Boot","Spring MVC", "GA4GH");
+		Flux<String> ga4ghFlux=Flux.just("Spring Boot","Spring MVC", "GA4GH");
 		
 	}
 }
