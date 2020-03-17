@@ -8,7 +8,7 @@ type Query {
 }
 
 type GA4GH {
-  id: int
+
   sequencename: String
   genbankaccn: String
   refseqaccn: String

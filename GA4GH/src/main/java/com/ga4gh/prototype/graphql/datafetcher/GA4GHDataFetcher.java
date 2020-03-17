@@ -1,6 +1,7 @@
 package com.ga4gh.prototype.graphql.datafetcher;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.ga4gh.prototype.entity.GA4GH;
 import com.ga4gh.prototype.repository.GA4GHRepository;
@@ -8,6 +9,7 @@ import com.ga4gh.prototype.repository.GA4GHRepository;
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
 
+@Component
 public class GA4GHDataFetcher implements DataFetcher {
 
 	@Autowired
