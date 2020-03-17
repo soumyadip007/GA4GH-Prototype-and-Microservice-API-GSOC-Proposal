@@ -1,5 +1,22 @@
 package com.ga4gh.prototype.graphql.datafetcher;
 
-public class GA4GHDataFetcher {
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ga4gh.prototype.entity.GA4GH;
+import com.ga4gh.prototype.repository.GA4GHRepository;
+
+import graphql.schema.DataFetcher;
+import graphql.schema.DataFetchingEnvironment;
+
+public class GA4GHDataFetcher implements DataFetcher {
+
+	@Autowired
+	GA4GHRepository ga4ghRepository;
+
+	@Override
+	public GA4GH get(DataFetchingEnvironment environment) {
+		
+		return null;
+	}
 
 }
