@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.ga4gh.prototype.repository.GA4GHRepository;
 
+import graphql.GraphQL;
+
 @Service
 public class GraphQLService {
 
@@ -16,5 +18,8 @@ public class GraphQLService {
 	
 	@Value("classpath:ga4gh.graphql")
 	Resource resource;
+	
+	private GraphQL graphQL;
+	
 	
 }
