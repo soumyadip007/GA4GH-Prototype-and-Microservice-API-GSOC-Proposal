@@ -4,11 +4,11 @@ schema {
 
 type Query {
  allData: [GA4GH]
- ga4gh(id: int): GA4GH
+ ga4gh(id: Integer): GA4GH
 }
 
 type GA4GH {
-
+  id: Integer
   sequencename: String
   genbankaccn: String
   refseqaccn: String
