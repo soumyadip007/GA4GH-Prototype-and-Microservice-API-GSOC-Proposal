@@ -18,9 +18,9 @@ public class AllGA4GHDataFetcher implements DataFetcher {
 	GA4GHRepository ga4ghRepository;
 
 	@Override
-	public Object get(DataFetchingEnvironment environment) {
+	public List<GA4GH> get(DataFetchingEnvironment environment) {
 		
-		return null;
+		return ga4ghRepository.findAll();
 	}
 	
 	
