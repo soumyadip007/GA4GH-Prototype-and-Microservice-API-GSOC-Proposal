@@ -9,10 +9,19 @@ import com.ga4gh.prototype.entity.GA4GH;
 import com.ga4gh.prototype.repository.GA4GHRepository;
 
 import graphql.schema.DataFetcher;
+import graphql.schema.DataFetchingEnvironment;
 
 @Component
-public class AllGA4GHDataFetcher implements DataFetcher<List<GA4GH>> {
+public class AllGA4GHDataFetcher implements DataFetcher {
 
 	@Autowired
 	GA4GHRepository ga4ghRepository;
+
+	@Override
+	public Object get(DataFetchingEnvironment environment) {
+		
+		return null;
+	}
+	
+	
 }
