@@ -6,7 +6,6 @@ import java.io.IOException;
 
 import javax.annotation.PostConstruct;
 
-import org.dom4j.datatype.SchemaParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
@@ -20,8 +19,9 @@ import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
+import graphql.schema.idl.SchemaParser;
 import graphql.schema.idl.TypeDefinitionRegistry;
-
+import graphql.schema.idl.errors.SchemaProblem;
 
 @Service
 public class GraphQLService {
@@ -41,7 +41,7 @@ public class GraphQLService {
 	private GraphQL graphQL;
 	
 	@PostConstruct
-	private void loadSchema() throws IOException{
+	private void loadSchema() throws IOException,SchemaProblem {
 		
 		
 		File schemaFile=resource.getFile();
