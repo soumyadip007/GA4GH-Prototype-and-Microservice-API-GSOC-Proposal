@@ -16,7 +16,9 @@ public class GA4GHDataFetcher implements DataFetcher {
 	@Override
 	public GA4GH get(DataFetchingEnvironment environment) {
 		
-		return null;
+		int key= environment.getArgument("id");
+		
+		return ga4ghRepository.findById(key);
 	}
 
 }
