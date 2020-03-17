@@ -1,0 +1,6 @@
+
+
+type GA4GH{
+ ISN: String
+
+}
