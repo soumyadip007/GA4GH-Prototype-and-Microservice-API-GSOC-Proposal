@@ -13,16 +13,18 @@ import javax.persistence.Table;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
 @Getter	
 @Setter	
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "ga4gh")
-//@Document(indexName = "GA4GH", type="GA4GH", shards=1)
-//@Document(indexName = "id", type = "GA4GH")
 public class GA4GH {
 
 
