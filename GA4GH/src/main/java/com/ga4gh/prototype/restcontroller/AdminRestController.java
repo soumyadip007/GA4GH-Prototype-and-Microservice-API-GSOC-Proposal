@@ -28,7 +28,7 @@ public class AdminRestController {
 	@GetMapping
 	public List<GA4GH> FindAll() {
 	
-		List<GA4GH> list = GA4GHService.findPage(1,5, "id");
+		
 		
 		return GA4GHService.findAll();
 	}
