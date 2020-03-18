@@ -5,6 +5,7 @@ schema {
 type Query {
  allData: [GA4GH]
  ga4gh(id: ID): GA4GH
+ ga4ghName(sequencename: String): GA4GH
 }
 
 type GA4GH {
