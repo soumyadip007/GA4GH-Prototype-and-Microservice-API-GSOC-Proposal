@@ -5,6 +5,10 @@ schema {
 type Query {
  allData: [GA4GH]
  ga4gh(id: ID): GA4GH
+ ga4ghName(sequencename: String): GA4GH
+ ga4ghGenBank(genbankaccn: String): GA4GH
+ ga4ghRef(refseqaccn: String): GA4GH
+ ga4ghSeqLen(sequencelength: String): GA4GH
 }
 
 type GA4GH {
@@ -14,3 +18,4 @@ type GA4GH {
   refseqaccn: String
   sequencelength: String
 }
+
