@@ -28,8 +28,6 @@ public class AdminRestController {
 	@GetMapping
 	public List<GA4GH> FindAll() {
 	
-		
-		
 		return GA4GHService.findAll();
 	}
 

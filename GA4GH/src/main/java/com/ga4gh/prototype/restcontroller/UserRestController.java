@@ -71,6 +71,16 @@ public class UserRestController {
 		return list;
 	}
 	
+
+	@GetMapping("/limit/{pageSize}/{sort}")
+	public List<GA4GH> FindLimitWithSort(@PathVariable int pageSize,
+									@PathVariable String sort) {
+	
+		List<GA4GH> list = GA4GHService.findPage(0,pageSize,sort);
+		
+		return list;
+	}
+	
 	
 	@GetMapping("/id/{theId}")
 	public GA4GH findById(@PathVariable int theId) {
