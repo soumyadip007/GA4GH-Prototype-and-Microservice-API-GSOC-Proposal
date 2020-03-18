@@ -30,7 +30,7 @@ public class UserRestController {
 	
 	
 
-	@GetMapping("")
+	@GetMapping
 	public List<GA4GH> FindAll() {
 	
 		return GA4GHService.findAll();
