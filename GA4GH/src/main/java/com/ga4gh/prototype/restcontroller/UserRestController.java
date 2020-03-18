@@ -42,7 +42,7 @@ public class UserRestController {
 	
 		List<GA4GH> list = GA4GHService.findPage(pageNo,pageSize, "id");
 		
-		return GA4GHService.findAll();
+		return list;
 	}
 	
 	
