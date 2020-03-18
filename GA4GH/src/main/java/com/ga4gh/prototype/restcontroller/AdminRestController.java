@@ -30,6 +30,53 @@ public class AdminRestController {
 	
 		return GA4GHService.findAll();
 	}
+	
+
+	@GetMapping("/{pageNo}")
+	public List<GA4GH> FindPage(@PathVariable int pageNo) {
+	
+		List<GA4GH> list = GA4GHService.findPage(pageNo,100, "id");
+		
+		return list;
+	}
+	
+	@GetMapping("/{pageNo}/{pageSize}")
+	public List<GA4GH> FindPageWithSize(@PathVariable int pageNo,
+								@PathVariable int pageSize) {
+	
+		List<GA4GH> list = GA4GHService.findPage(pageNo,pageSize, "id");
+		
+		return list;
+	}
+	
+	@GetMapping("/{pageNo}/{pageSize}/{sort}")
+	public List<GA4GH> FindPageWithSorting(@PathVariable int pageNo,
+								@PathVariable int pageSize,
+								@PathVariable String sort) {
+	
+		List<GA4GH> list = GA4GHService.findPage(pageNo,pageSize,sort);
+		
+		return list;
+	}
+	
+	@GetMapping("/limit/{pageSize}")
+	public List<GA4GH> FindLimit(@PathVariable int pageSize) {
+	
+		List<GA4GH> list = GA4GHService.findPage(0,pageSize,"id");
+		
+		return list;
+	}
+	
+
+	@GetMapping("/limit/{pageSize}/{sort}")
+	public List<GA4GH> FindLimitWithSort(@PathVariable int pageSize,
+									@PathVariable String sort) {
+	
+		List<GA4GH> list = GA4GHService.findPage(0,pageSize,sort);
+		
+		return list;
+	}
+	
 
 	@GetMapping("/id/{theId}")
 	public GA4GH findById(@PathVariable int theId) {
