@@ -25,7 +25,7 @@ public class AdminRestController {
 	@Autowired  
 	private GA4GHService GA4GHService;
 
-	@GetMapping("")
+	@GetMapping
 	public List<GA4GH> FindAll() {
 	
 		List<GA4GH> OBJ=GA4GHService.findAll();
