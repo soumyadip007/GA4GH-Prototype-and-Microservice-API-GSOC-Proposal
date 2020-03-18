@@ -50,7 +50,7 @@ public class UserRestController {
 								@PathVariable int pageSize,
 								@PathVariable String sort) {
 	
-		List<GA4GH> list = GA4GHService.findPage(pageNo,pageSize, "id");
+		List<GA4GH> list = GA4GHService.findPage(pageNo,pageSize,sort);
 		
 		return list;
 	}
