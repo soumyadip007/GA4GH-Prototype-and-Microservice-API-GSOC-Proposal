@@ -1,11 +1,17 @@
 package com.ga4gh.prototype.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.ga4gh.prototype.entity.GA4GH;
+import com.ga4gh.prototype.repository.GA4GHPageRepository;
 import com.ga4gh.prototype.repository.GA4GHRepository;
 
 @Service
@@ -14,6 +20,8 @@ public class GA4GHService implements GA4GHServiceInterface {
 	
 	private GA4GHRepository GA4GHRepository;
 	
+	@Autowired
+	private GA4GHPageRepository pg;
 
 	@Autowired   
 	public GA4GHService(GA4GHRepository GA4GHRepository)
@@ -63,6 +71,19 @@ public class GA4GHService implements GA4GHServiceInterface {
 	{
 		return GA4GHRepository.findBySequencelength(seq);
 	}
+	
+	public List<GA4GH> findPage(Integer pageNo, Integer pageSize, String sortBy)
+    {
+        PageRequest paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy) );
+ 
+        Page<GA4GH> pagedResult = pg.findAll(paging);
+         
+        if(pagedResult.hasContent()) {
+            return pagedResult.getContent();
+        } else {
+            return null;
+        }
+    }
 	
 
 }
