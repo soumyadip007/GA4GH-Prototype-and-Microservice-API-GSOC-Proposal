@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ import com.ga4gh.prototype.service.GA4GHService;
 
 @CrossOrigin(origins ="*",allowedHeaders="*",maxAge=200000) 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/admin")  
 public class AdminRestController {
 
 	@Autowired  
@@ -27,10 +28,18 @@ public class AdminRestController {
 	@GetMapping("")
 	public List<GA4GH> FindAll() {
 	
+		List<GA4GH> OBJ=GA4GHService.findAll();
+		
+		
+		for(GA4GH a:OBJ)
+		{
+			System.out.println(a);
+		}
+		
+		
 		return GA4GHService.findAll();
 	}
-	
-	
+
 	@GetMapping("/id/{theId}")
 	public GA4GH findById(@PathVariable int theId) {
 		
