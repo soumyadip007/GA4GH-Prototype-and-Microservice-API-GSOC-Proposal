@@ -30,8 +30,9 @@ public class AdminRestController {
 	
 		List<GA4GH> OBJ=GA4GHService.findAll();
 		
+		List<GA4GH> list = GA4GHService.findPage(0, 5, "id");
 		
-		for(GA4GH a:OBJ)
+		for(GA4GH a:list)
 		{
 			System.out.println(a);
 		}
