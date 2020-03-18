@@ -35,8 +35,8 @@ public class GraphQLService {
 	@Autowired
 	private AllGA4GHDataFetcher allGA4GHDataFetcher;
 	
-//	@Autowired
-//	private GA4GHDataFetcher ga4ghDataFetcher;
+	@Autowired
+	private GA4GHDataFetcher ga4ghDataFetcher;
 	
 	private GraphQL graphQL;
 	
@@ -56,8 +56,8 @@ public class GraphQLService {
 	 private RuntimeWiring buildRuntimeWiring() {
 	        return RuntimeWiring.newRuntimeWiring()
 	                .type("Query", typeWiring -> typeWiring
-	                        .dataFetcher("allData", allGA4GHDataFetcher))
-	                        //.dataFetcher("ga4gh", ga4ghDataFetcher))
+	                        .dataFetcher("allData", allGA4GHDataFetcher)
+	                        .dataFetcher("ga4gh", ga4ghDataFetcher))
 	                .build();
 	    }
 	
