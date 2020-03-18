@@ -28,7 +28,6 @@ public class UserRestController {
 		this.GA4GHService=GA4GHService;
 	}
 	
-	
 
 	@GetMapping
 	public List<GA4GH> FindAll() {
