@@ -36,8 +36,16 @@ public class UserRestController {
 		return GA4GHService.findAll();
 	}
 	
+	@GetMapping("/{pageNo}")
+	public List<GA4GH> FindPage(@PathVariable int pageNo) {
+	
+		List<GA4GH> list = GA4GHService.findPage(pageNo,100, "id");
+		
+		return list;
+	}
+	
 	@GetMapping("/{pageNo}/{pageSize}")
-	public List<GA4GH> FindPage(@PathVariable int pageNo,
+	public List<GA4GH> FindPageWithSize(@PathVariable int pageNo,
 								@PathVariable int pageSize) {
 	
 		List<GA4GH> list = GA4GHService.findPage(pageNo,pageSize, "id");
@@ -51,6 +59,14 @@ public class UserRestController {
 								@PathVariable String sort) {
 	
 		List<GA4GH> list = GA4GHService.findPage(pageNo,pageSize,sort);
+		
+		return list;
+	}
+	
+	@GetMapping("/limit/{pageSize}")
+	public List<GA4GH> FindLimit(@PathVariable int pageSize) {
+	
+		List<GA4GH> list = GA4GHService.findPage(0,pageSize,"id");
 		
 		return list;
 	}
