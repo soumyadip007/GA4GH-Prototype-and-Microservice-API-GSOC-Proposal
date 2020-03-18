@@ -28,8 +28,6 @@ public class AdminRestController {
 	@GetMapping
 	public List<GA4GH> FindAll() {
 	
-		List<GA4GH> OBJ=GA4GHService.findAll();
-		
 		List<GA4GH> list = GA4GHService.findPage(0, 5, "id");
 		
 		for(GA4GH a:list)
@@ -38,7 +36,7 @@ public class AdminRestController {
 		}
 		
 		
-		return GA4GHService.findAll();
+		return list;
 	}
 
 	@GetMapping("/id/{theId}")
