@@ -36,6 +36,15 @@ public class UserRestController {
 		return GA4GHService.findAll();
 	}
 	
+	@GetMapping("/{pageNo}/{pageSize}")
+	public List<GA4GH> FindPage(@PathVariable int pageNo,
+								@PathVariable int pageSize) {
+	
+		List<GA4GH> list = GA4GHService.findPage(pageNo,pageSize, "id");
+		
+		return GA4GHService.findAll();
+	}
+	
 	
 	@GetMapping("/id/{theId}")
 	public GA4GH findById(@PathVariable int theId) {
