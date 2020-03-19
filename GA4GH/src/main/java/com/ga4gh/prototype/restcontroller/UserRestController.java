@@ -52,6 +52,17 @@ public class UserRestController {
 		return list;
 	}
 	
+	@GetMapping("/{pageNo}/sort/{sort}")
+	public List<GA4GH> FindPageWithsort(@PathVariable int pageNo,
+								@PathVariable String sort) {
+	
+		List<GA4GH> list = GA4GHService.findPage(pageNo,100, sort);
+		
+		return list;
+	}
+	
+	
+	
 	@GetMapping("/{pageNo}/{pageSize}/{sort}")
 	public List<GA4GH> FindPageWithSorting(@PathVariable int pageNo,
 								@PathVariable int pageSize,
