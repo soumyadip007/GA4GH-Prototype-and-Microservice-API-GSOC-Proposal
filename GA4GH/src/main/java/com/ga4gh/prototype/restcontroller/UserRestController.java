@@ -64,7 +64,7 @@ public class UserRestController {
 	
 	
 	@GetMapping("/{pageNo}/{pageSize}/{sort}")
-	public List<GA4GH> FindPageWithSorting(@PathVariable int pageNo,
+	public List<GA4GH> FindPageWithLimitAndSorting(@PathVariable int pageNo,
 								@PathVariable int pageSize,
 								@PathVariable String sort) {
 	
