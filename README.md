@@ -1,4 +1,4 @@
-# GA4GH-Prototype-and-Demo-API
+# GA4GH-Prototype-and-Demo-API-GSOC-Proposal
 
 <img src="./GA4GH/reports/1.png" >
 <img src="./GA4GH/reports/2.png" >
